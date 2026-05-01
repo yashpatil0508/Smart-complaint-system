@@ -18,6 +18,11 @@ app.use('/api/auth', require('./routes/auth.routes'));
 app.use('/api/complaints', require('./routes/complaint.routes'));
 app.use('/api/dashboard', require('./routes/dashboard.routes'));
 
+// Default Root Route (Health Check)
+app.get('/', (req, res) => {
+  res.send('Smart Complaint Backend API is running!');
+});
+
 // Database Connection
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/smart_complaint')
 .then(() => console.log('MongoDB connected'))
