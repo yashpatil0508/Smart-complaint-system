@@ -39,7 +39,7 @@ function AdminDashboard() {
         const headers = { Authorization: `Bearer ${token}` };
 
         // Fetch Complaints
-        const compRes = await fetch("http://localhost:5000/api/complaints", {
+        const compRes = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/complaints`, {
           headers,
         });
         if (compRes.ok) {
@@ -49,7 +49,7 @@ function AdminDashboard() {
 
         // Fetch Stats
         const statsRes = await fetch(
-          "http://localhost:5000/api/dashboard/stats",
+          `${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/dashboard/stats`,
           { headers },
         );
         if (statsRes.ok) {
@@ -59,7 +59,7 @@ function AdminDashboard() {
 
         // Fetch Authorities for Assignment
         const authRes = await fetch(
-          "http://localhost:5000/api/auth/authorities",
+          `${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/auth/authorities`,
           { headers },
         );
         if (authRes.ok) {
@@ -78,7 +78,7 @@ function AdminDashboard() {
     try {
       const token = localStorage.getItem("token");
       const response = await fetch(
-        `http://localhost:5000/api/complaints/${complaintId}/details`,
+        `${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/complaints/${complaintId}/details`,
         {
           method: "PUT",
           headers: {
@@ -115,7 +115,7 @@ function AdminDashboard() {
     try {
       const token = localStorage.getItem("token");
       const response = await fetch(
-        `http://localhost:5000/api/complaints/${complaintId}/details`,
+        `${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/complaints/${complaintId}/details`,
         {
           method: "PUT",
           headers: {
@@ -151,7 +151,7 @@ function AdminDashboard() {
     try {
       const token = localStorage.getItem("token");
       const response = await fetch(
-        `http://localhost:5000/api/complaints/${complaintId}`,
+        `${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/complaints/${complaintId}`,
         {
           method: "DELETE",
           headers: {

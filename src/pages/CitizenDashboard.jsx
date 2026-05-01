@@ -28,7 +28,7 @@ function CitizenDashboard() {
         const headers = { Authorization: `Bearer ${token}` };
 
         // Fetch user's complaints
-        const compRes = await fetch("http://localhost:5000/api/complaints", { headers });
+        const compRes = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/complaints`, { headers });
         if (compRes.ok) {
           const compData = await compRes.json();
           setComplaints(compData);

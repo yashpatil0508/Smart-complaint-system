@@ -34,7 +34,7 @@ const AuthorityDashboard = () => {
         const token = localStorage.getItem("token");
         const headers = { Authorization: `Bearer ${token}` };
 
-        const compRes = await fetch("http://localhost:5000/api/complaints", {
+        const compRes = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/complaints`, {
           headers,
         });
         if (compRes.ok) {
@@ -43,7 +43,7 @@ const AuthorityDashboard = () => {
         }
 
         const statsRes = await fetch(
-          "http://localhost:5000/api/dashboard/stats",
+          `${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/dashboard/stats`,
           { headers },
         );
         if (statsRes.ok) {
@@ -61,7 +61,7 @@ const AuthorityDashboard = () => {
     try {
       const token = localStorage.getItem("token");
       const response = await fetch(
-        `http://localhost:5000/api/complaints/${complaintId}/status`,
+        `${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/complaints/${complaintId}/status`,
         {
           method: "PUT",
           headers: {
