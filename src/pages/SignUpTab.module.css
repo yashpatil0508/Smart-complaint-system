@@ -1,0 +1,195 @@
+/* Smart City Dashboard - Sign Up Page */
+.formcontainer {
+  background: linear-gradient(135deg, #8d4343 0%, #355574 100%);
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  border-radius: 100px;
+  box-shadow: 0 16px 40px rgba(10, 31, 68, 0.12);
+  margin: 60px auto;
+  padding: 0;
+  border: 1px solid rgba(30, 144, 255, 0.1);
+  animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.forms {
+  padding: 40px 32px;
+  width: 70%;
+}
+
+/* Form Content */
+.forms h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 24px 0;
+  color: #0a1f44;
+  text-align: center;
+  font-family: "Poppins", "Roboto", sans-serif;
+}
+
+/* Form Groups */
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #0a1f44;
+  font-size: 14px;
+  font-family: "Poppins", "Roboto", sans-serif;
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e0e4e8;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: "Poppins", "Roboto", sans-serif;
+  transition: all 0.3s ease;
+  background: #ffffff;
+  color: #222222;
+  box-sizing: border-box;
+}
+
+.formGroup input:focus,
+.formGroup select:focus,
+.formGroup textarea:focus {
+  outline: none;
+  border-color: #1e90ff;
+  box-shadow: 0 0 0 4px rgba(30, 144, 255, 0.1);
+}
+
+.formGroup input::placeholder,
+.formGroup textarea::placeholder {
+  color: #717171;
+}
+
+/* Input Styling */
+.inputs {
+  margin: 10px 0;
+}
+
+/* Two Column Layout */
+.twoColumnGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* Submit Button */
+.submitButton {
+  width: 100%;
+  padding: 14px 24px;
+  background: linear-gradient(135deg, #1e90ff 0%, #0d7ee8 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+  box-shadow: 0 4px 12px rgba(30, 144, 255, 0.2);
+  font-family: "Poppins", "Roboto", sans-serif;
+}
+
+.submitButton:hover {
+  background: linear-gradient(135deg, #0d7ee8 0%, #0a5fb5 100%);
+  box-shadow: 0 8px 20px rgba(30, 144, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Success Message */
+.successMessage {
+  background: rgba(0, 200, 150, 0.1);
+  color: #00c896;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border-left: 4px solid #00c896;
+  font-weight: 600;
+}
+
+/* Error Message */
+.errorMessage {
+  background: rgba(255, 77, 77, 0.1);
+  color: #ff4d4d;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border-left: 4px solid #ff4d4d;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .formcontainer {
+    width: 95%;
+    margin: 40px auto;
+  }
+
+  .forms {
+    padding: 30px 24px;
+  }
+
+  .headerContainer {
+    padding: 30px 24px;
+  }
+
+  .twoColumnGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .navContainer {
+    flex-direction: column;
+    padding: 12px 24px;
+  }
+
+  .tabButton {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .forms {
+    padding: 20px 16px;
+    width: 100%;
+  }
+
+  .formGroup input,
+  .formGroup select,
+  .formGroup textarea {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .submitButton {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+
+  .navContainer {
+    padding: 10px 16px;
+  }
+
+  .tabButton {
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,180 @@
+/* Smart City Dashboard - Complaint Analysis */
+.complaint-analysis {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.analysis-left {
+  width: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.analysis-right {
+  flex: 1;
+}
+
+.analysis-right h4 {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--primary);
+  font-family: "Poppins", "Roboto", sans-serif;
+}
+
+.analysis-legend {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.analysis-legend li {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 8px 12px;
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.analysis-legend li:hover {
+  border-color: var(--secondary);
+  background: rgba(30, 144, 255, 0.05);
+}
+
+.swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  display: inline-block;
+  box-shadow: 0 2px 6px rgba(10, 31, 68, 0.15);
+}
+
+.muted {
+  margin-left: 4px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Large variant */
+.analysis-large {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(10, 31, 68, 0.1);
+  border: 1px solid rgba(30, 144, 255, 0.1);
+  animation: fadeUp 0.6s ease-out;
+}
+
+.analysis-large .analysis-right h4 {
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+.analysis-large .analysis-legend li {
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.analysis-large .analysis-left {
+  width: 180px;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .complaint-analysis {
+    gap: 20px;
+  }
+
+  .analysis-left {
+    width: 120px;
+  }
+
+  .analysis-large .analysis-left {
+    width: 140px;
+  }
+}
+
+@media (max-width: 768px) {
+  .complaint-analysis {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .analysis-left {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .analysis-large {
+    padding: 16px;
+  }
+
+  .analysis-large .analysis-right h4 {
+    font-size: 16px;
+  }
+
+  .analysis-legend {
+    gap: 8px;
+  }
+
+  .analysis-legend li {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .complaint-analysis {
+    gap: 12px;
+    padding: 12px 0;
+  }
+
+  .analysis-large {
+    padding: 12px;
+  }
+
+  .analysis-right h4 {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .analysis-legend {
+    gap: 6px;
+    justify-content: center;
+  }
+
+  .analysis-legend li {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+
+  .swatch {
+    width: 12px;
+    height: 12px;
+  }
+}

@@ -1,0 +1,250 @@
+/* Smart City Dashboard - Complaint Progress Stepper */
+.progress-container {
+  margin-bottom: 40px;
+  padding: 30px;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(10, 31, 68, 0.08);
+  border: 1px solid rgba(30, 144, 255, 0.1);
+  animation: slideDown 0.6s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stepper-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin-bottom: 32px;
+}
+
+/* Step Styles */
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  flex: 1;
+  z-index: 1;
+}
+
+.step-circle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 3px solid #e0e4e8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 20px;
+  color: #717171;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(10, 31, 68, 0.1);
+  position: relative;
+}
+
+.step.completed .step-circle {
+  background: linear-gradient(135deg, #00c896 0%, #00a86e 100%);
+  border-color: #00c896;
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 200, 150, 0.3);
+}
+
+.step.active .step-circle {
+  background: linear-gradient(135deg, #1e90ff 0%, #0d7ee8 100%);
+  border-color: #1e90ff;
+  color: white;
+  box-shadow: 0 6px 16px rgba(30, 144, 255, 0.4);
+  transform: scale(1.1);
+}
+
+.step-circle .checkmark {
+  font-size: 24px;
+  animation: popIn 0.3s ease-out;
+}
+
+.step-circle .step-number {
+  font-size: 24px;
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.step-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #717171;
+  text-align: center;
+  max-width: 80px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  transition: all 0.3s ease;
+}
+
+.step.active .step-label {
+  color: #1e90ff;
+  font-weight: 700;
+}
+
+.step.completed .step-label {
+  color: #00c896;
+}
+
+/* Step Connector */
+.step-connector {
+  flex: 1;
+  height: 3px;
+  background: #e0e4e8;
+  margin: 0 8px;
+  margin-top: -32px;
+  transition: background 0.3s ease;
+  position: relative;
+  z-index: 0;
+}
+
+.step-connector.completed {
+  background: linear-gradient(90deg, #00c896 0%, #1e90ff 100%);
+  box-shadow: 0 2px 6px rgba(0, 200, 150, 0.3);
+}
+
+/* Progress Bar */
+.progress-bar-wrapper {
+  position: relative;
+}
+
+.progress-bar-background {
+  width: 100%;
+  height: 8px;
+  background: #e0e4e8;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: inset 0 1px 3px rgba(10, 31, 68, 0.1);
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #1e90ff 0%, #00c896 100%);
+  border-radius: 10px;
+  transition: width 0.6s cubic-bezier(0.2, 0.9, 0.2, 1);
+  box-shadow: 0 0 10px rgba(30, 144, 255, 0.3);
+}
+
+.progress-text {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #0a1f44;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .stepper-wrapper {
+    gap: 0;
+  }
+
+  .step-circle {
+    width: 48px;
+    height: 48px;
+    font-size: 16px;
+    border-width: 2px;
+  }
+
+  .step-label {
+    font-size: 11px;
+    max-width: 60px;
+  }
+
+  .step-connector {
+    margin: 0 4px;
+    margin-top: -28px;
+  }
+
+  .progress-container {
+    padding: 20px;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .stepper-wrapper {
+    gap: 0;
+    margin-bottom: 24px;
+  }
+
+  .step-circle {
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+    border-width: 2px;
+    box-shadow: 0 2px 6px rgba(10, 31, 68, 0.08);
+  }
+
+  .step.active .step-circle {
+    transform: scale(1.05);
+  }
+
+  .step-label {
+    font-size: 10px;
+    max-width: 50px;
+  }
+
+  .step-connector {
+    height: 2px;
+    margin: 0 2px;
+    margin-top: -24px;
+  }
+
+  .progress-container {
+    padding: 16px;
+  }
+
+  .progress-text {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 400px) {
+  .step-circle {
+    width: 36px;
+    height: 36px;
+    font-size: 12px;
+  }
+
+  .step-label {
+    display: none;
+  }
+
+  .step-connector {
+    height: 2px;
+    margin: 0 2px;
+    margin-top: -20px;
+  }
+
+  .progress-container {
+    padding: 12px;
+  }
+}

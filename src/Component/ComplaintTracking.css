@@ -1,0 +1,261 @@
+/* Complaint Tracking Section */
+.complaint-tracking-section {
+  background: var(--bg);
+  padding: 60px 20px;
+  margin: 40px 0;
+}
+
+.tracking-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.tracking-header {
+  text-align: center;
+  margin-bottom: 40px;
+  animation: fadeUp 600ms ease-out;
+}
+
+.tracking-header h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--primary);
+  margin: 0 0 12px 0;
+}
+
+.tracking-header p {
+  font-size: 16px;
+  color: var(--muted);
+  margin: 0;
+}
+
+.tracking-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.tracking-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 24px;
+  border: 2px solid var(--border);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+  animation: fadeUp 600ms ease-out forwards;
+  opacity: 0;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  align-items: start;
+}
+
+.tracking-card:hover {
+  border-color: var(--secondary);
+  box-shadow: var(--shadow-lg);
+  transform: translateX(4px);
+}
+
+.tracking-card > div:first-child {
+  grid-column: 1 / -1;
+}
+
+.tracking-card > div:last-child {
+  grid-column: 1 / -1;
+}
+
+.tracking-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.complaint-id {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--secondary);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.badge-pending {
+  background: rgba(255, 77, 77, 0.15);
+  color: var(--pending);
+  border: 1px solid rgba(255, 77, 77, 0.3);
+}
+
+.badge-in-progress {
+  background: rgba(30, 144, 255, 0.15);
+  color: var(--in-progress);
+  border: 1px solid rgba(30, 144, 255, 0.3);
+}
+
+.badge-resolved {
+  background: rgba(0, 200, 150, 0.15);
+  color: var(--resolved);
+  border: 1px solid rgba(0, 200, 150, 0.3);
+}
+
+.status-icon {
+  font-size: 14px;
+}
+
+.tracking-content {
+  width: 100%;
+}
+
+.complaint-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--primary);
+  margin: 0 0 12px 0;
+}
+
+.complaint-description {
+  font-size: 13px;
+  color: var(--text);
+  margin: 8px 0;
+  line-height: 1.5;
+}
+
+.complaint-description strong {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.complaint-date {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 12px 0 0 0;
+  font-style: italic;
+}
+
+.tracking-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-small {
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-ghost.btn-small {
+  background: transparent;
+  border: 1px solid var(--secondary);
+  color: var(--secondary);
+}
+
+.btn-ghost.btn-small:hover {
+  background: rgba(30, 144, 255, 0.1);
+  box-shadow: var(--shadow-sm);
+}
+
+.tracking-footer {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.btn-large {
+  padding: 14px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-primary.btn-large {
+  background: var(--secondary);
+  color: white;
+}
+
+.btn-primary.btn-large:hover {
+  background: #0d7ee8;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .complaint-tracking-section {
+    padding: 40px 16px;
+  }
+
+  .tracking-header h2 {
+    font-size: 24px;
+  }
+
+  .tracking-card {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tracking-card > div {
+    width: 100%;
+  }
+
+  .tracking-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .complaint-title {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tracking-card {
+    padding: 12px;
+  }
+
+  .complaint-id {
+    font-size: 12px;
+  }
+
+  .badge {
+    padding: 6px 12px;
+    font-size: 11px;
+  }
+
+  .complaint-title {
+    font-size: 14px;
+  }
+
+  .complaint-description {
+    font-size: 12px;
+  }
+}

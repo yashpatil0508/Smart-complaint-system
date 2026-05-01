@@ -1,0 +1,254 @@
+/* Complaint Submission Form */
+.complaint-form-section {
+  background: var(--surface-secondary);
+  padding: 60px 20px;
+  margin: 40px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.form-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 40px;
+  animation: fadeUp 600ms ease-out;
+}
+
+.form-header h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--primary);
+  margin: 0 0 12px 0;
+}
+
+.form-header p {
+  font-size: 16px;
+  color: var(--muted);
+  margin: 0;
+}
+
+.complaint-form {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  box-shadow: var(--shadow-md);
+  animation: fadeUp 700ms ease-out;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  padding: 14px 16px;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-family: inherit;
+  transition: var(--transition);
+  background: var(--surface);
+  color: var(--text);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--secondary);
+  box-shadow: 0 0 0 4px rgba(30, 144, 255, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 150px;
+  font-family: inherit;
+}
+
+.form-group small {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+/* File Input Styling */
+.file-input-wrapper {
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.file-input-wrapper input[type="file"] {
+  display: none;
+}
+
+.file-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 2px dashed var(--secondary);
+  border-radius: var(--radius);
+  background: rgba(30, 144, 255, 0.05);
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: 600;
+  color: var(--secondary);
+}
+
+.file-label:hover {
+  background: rgba(30, 144, 255, 0.1);
+  border-color: var(--secondary);
+}
+
+.file-label span:first-child {
+  font-size: 20px;
+}
+
+.file-name {
+  font-size: 12px;
+  color: var(--success);
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 300px;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 14px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 24px;
+}
+
+/* Success Alert */
+.alert {
+  display: flex;
+  gap: 12px;
+  padding: 16px 20px;
+  border-radius: var(--radius);
+  margin-bottom: 24px;
+  animation: slideDown 400ms ease-out;
+}
+
+.alert span {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.alert strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 16px;
+}
+
+.alert p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.alert-success {
+  background: rgba(0, 200, 150, 0.1);
+  color: var(--success);
+  border-left: 4px solid var(--success);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .complaint-form-section {
+    padding: 40px 16px;
+  }
+
+  .complaint-form {
+    padding: 24px;
+  }
+
+  .form-header h2 {
+    font-size: 24px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .form-group label {
+    font-size: 13px;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    padding: 12px 14px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .complaint-form {
+    padding: 16px;
+  }
+
+  .form-row {
+    gap: 12px;
+  }
+
+  .file-label {
+    padding: 12px 14px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btn-submit {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+}

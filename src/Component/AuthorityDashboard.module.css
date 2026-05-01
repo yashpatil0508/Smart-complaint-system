@@ -1,0 +1,421 @@
+.dashboardPage {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  padding: 16px;
+}
+
+.dashboardGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Smart City Dashboard - Citizen Dashboard */
+.welcome {
+
+  padding: 32px;
+  background: linear-gradient(135deg, #0a1f44 0%, rgba(10, 31, 68, 0.95) 100%);
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 8px 24px rgba(10, 31, 68, 0.15);
+  animation: slideDown 0.6s ease-out;
+  border: 1px solid rgba(30, 144, 255, 0.2);
+}
+
+.welcome h1 {
+  margin: 0 0 8px 0;
+  color: white;
+  font-size: 28px;
+  font-weight: 700;
+  font-family: "Poppins", "Roboto", sans-serif;
+}
+
+.welcome p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+}
+
+/* .welcome {
+  background-color: #786868;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+} */
+
+.sidebar {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--card-shadow);
+  padding: 16px 20px;
+  order: -1;
+}
+
+.sidebarTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  margin-right: 24px;
+  color: var(--primary);
+  display: inline-block;
+}
+
+.sidebarNav {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.sidebarButton {
+  display: inline-block;
+  white-space: nowrap;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--muted);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.sidebarButton:hover {
+  background: rgba(30, 144, 255, 0.08);
+  color: var(--secondary);
+}
+
+.mainContent {
+  display: grid;
+  gap: 16px;
+}
+
+.cardsSection,
+.panelSection,
+.statsSection,
+.notificationSection {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--card-shadow);
+  padding: 16px;
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.card {
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  padding: 16px;
+  background: var(--surface);
+}
+
+.blueCard {
+  background: #e8f1ff;
+}
+
+.amberCard {
+  background: #fff4db;
+}
+
+.indigoCard {
+  background: #eef0ff;
+}
+
+.greenCard {
+  background: #eaf9f0;
+}
+
+.roseCard {
+  background: #ffe6eb;
+}
+
+.cardTitle {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--mute);
+  margin-bottom: 6px;
+}
+
+.cardValue {
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.filterRow {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.searchInput,
+.filterInput {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 0.95rem;
+}
+
+.filterInput {
+  background: #fff;
+}
+
+.tableWrap {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tableHead {
+  background: #f6f8fb;
+  color: #546e7a;
+}
+
+.tableHeadCell,
+.tableCell {
+  border-bottom: 1px solid var(--border);
+  padding: 10px;
+}
+
+.tableHeadCell {
+  text-transform: uppercase;
+  font-size: 0.76rem;
+  letter-spacing: 0.05em;
+}
+
+.tableRow:hover {
+  background: #f7f9fc;
+}
+
+.emptyRow {
+  text-align: center;
+  padding: 20px;
+  color: #7a8a98;
+}
+
+.statusBadge {
+  border-radius: 8px;
+  padding: 4px 10px;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.statusPending {
+  background: #fff4db;
+  color: #b76d05;
+}
+
+.statusInProgress {
+  background: #eef0ff;
+  color: #2f4f8f;
+}
+
+.statusResolved {
+  background: #eaf9f0;
+  color: #1b6b3f;
+}
+
+.actionRow {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.actionBtn {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  color: var(--primary);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.actionBtn:hover {
+  background: #f0f8ff;
+}
+
+.chartCard {
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  padding: 14px;
+}
+
+.chartTitle {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.chartRow {
+  display: grid;
+  gap: 10px;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 4rem;
+  margin-bottom: 9px;
+}
+
+.chartRowLabel {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.chartBarBackground {
+  background: #f2f5f8;
+  border-radius: 999px;
+  height: 10px;
+  overflow: hidden;
+}
+
+.chartBarFill {
+  background: var(--secondary);
+  height: 100%;
+  border-radius: 999px;
+}
+
+.chartBarFillIndigo {
+  background: #5b74e2;
+  height: 100%;
+  border-radius: 999px;
+}
+
+.chartRowValue {
+  text-align: right;
+  font-weight: 700;
+  color: #33475b;
+}
+
+.statusDistributionRow {
+  margin-bottom: 6px;
+}
+
+.pieLikeBar {
+  display: flex;
+  height: 14px;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 10px;
+  background: #f5f7fa;
+}
+
+.pieSegment {
+  height: 100%;
+}
+
+.segmentAmber {
+  background: #f0b000;
+}
+
+.segmentIndigo {
+  background: #5b74e2;
+}
+
+.segmentGreen {
+  background: #2ea06c;
+}
+
+.notificationTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.notificationList {
+  display: grid;
+  gap: 10px;
+}
+
+.notificationCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+}
+
+.notificationTitleText {
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 3px;
+}
+
+.notificationDesc {
+  color: #6d7f93;
+  font-size: 0.85rem;
+}
+
+.notificationTime {
+  font-size: 0.75rem;
+  color: #9aa7b5;
+}
+
+@media (min-width: 1024px) {
+  .cardsGrid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .filterRow {
+    grid-template-columns: 1.5fr 2fr;
+  }
+
+  .statsSection {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .cardsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sidebarNav {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboardGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .cardsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebarTitle {
+    display: block;
+    margin-bottom: 10px;
+    margin-right: 0;
+  }
+
+  .sidebarButton {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
+}
